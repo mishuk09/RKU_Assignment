@@ -191,6 +191,7 @@ public class exprement_01 {
 
 //Java Program to Calculate Average Using Arrays
 
+/*
 package Java.Exprement_1;
 
 import java.util.*;
@@ -210,4 +211,70 @@ public class exprement_01 {
 
     }
 
+}
+
+ */
+
+// Java Program to Find Largest Element of an Array
+
+/*
+ package Java.Exprement_1;
+
+import java.util.*;
+
+public class exprement_01 {
+
+    public static void main(String args[]) {
+
+        int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        int maxEle = arr[0];
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > maxEle) {
+                maxEle = arr[i];
+            }
+
+        }
+        System.out.println(maxEle);
+
+    }
+
+}
+
+ */
+
+// Java Program to Add Two Matrix Using Multi-dimensional Arrays
+
+package Java.Exprement_1;
+
+import java.util.*;
+
+public class exprement_01 {
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Row and Col: ");
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+
+        int arr[][] = new int[row][col];
+
+        System.out.println("Enter Element");
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; i < col; j++) {
+                arr[row][col] = sc.nextInt();
+            }
+
+        }
+
+        System.out.println("Output");
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; i < col; j++) {
+
+                System.out.println(arr[i][j]);
+            }
+        }
+
+    }
 }
