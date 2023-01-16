@@ -121,6 +121,7 @@ public class exprement_01 {
 
 // Java Program to Make a Simple Calculator Using switch...case
 
+/* 
 package Java.Exprement_1;
 
 import java.util.*;
@@ -133,19 +134,79 @@ public class exprement_01 {
         int num1 = sc.nextInt();
         int num2 = sc.nextInt();
         System.out.println("Enter operator:");
-        char  ch= sc.next().charAt(0);
+        char ch = sc.next().charAt(0);
 
         switch (ch) {
             case '+':
-            System.out.println("Sum of two number is" + " "+ (num1 + num2));
+                System.out.println("Sum of two number is" + " " + (num1 + num2));
             case '-':
-            System.out.println("Sum of two number is" + " "+ (num1 - num2));
+                System.out.println("Sum of two number is" + " " + (num1 - num2));
             case '*':
-            System.out.println("Sum of two number is" + " "+ (num1 * num2));
+                System.out.println("Sum of two number is" + " " + (num1 * num2));
             case '/':
-            System.out.println("Sum of two number is" + " "+ (num1 / num2));
+                System.out.println("Sum of two number is" + " " + (num1 / num2));
 
         }
+
+    }
+
+}
+*/
+
+// Write a java Program to check the number is Prime or not.
+
+/*
+ 
+package Java.Exprement_1;
+
+import java.util.*;
+
+public class exprement_01 {
+
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number:");
+        int num = sc.nextInt();
+        boolean isPrime = true;
+
+        for (int i = 2; i < num - 1; i++) {
+            if (num % i == 0) {
+                isPrime = false;
+            }
+
+        }
+
+        if (isPrime == true) {
+            System.out.println("Prime number");
+        } else {
+            System.out.println("Not prime number");
+        }
+
+    }
+
+}
+
+ */
+
+//Java Program to Calculate Average Using Arrays
+
+package Java.Exprement_1;
+
+import java.util.*;
+
+public class exprement_01 {
+
+    public static void main(String args[]) {
+
+        int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        int sum = 0;
+
+        for (int i = 0; i < arr.length+1; i++) {
+            sum += i;
+
+        }
+        System.out.println(sum);
 
     }
 
