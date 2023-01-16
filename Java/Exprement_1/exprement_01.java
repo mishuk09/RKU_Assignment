@@ -46,10 +46,6 @@ public class exprement_01 {
 
 // 3.Program to Check Whether an Alphabet is Vowel or Consonant
 
-
-
-
-
 /*  
 package Java.Exprement_1;
 
@@ -74,12 +70,7 @@ public class exprement_01 {
 }
 */
 
-
-
 // 4...Program to Find ASCII Value of a character
-
-
-
 
 /* 
 
@@ -102,10 +93,7 @@ public class exprement_01 {
 
 */
 
-
 // 5. Java Program to Display Armstrong Number Between Two Intervals
-
-
 
 package Java.Exprement_1;
 
@@ -113,17 +101,18 @@ import java.util.*;
 
 public class exprement_01 {
 
-   public static void main(String args[]){
-    
-    int num=123;
+    public static void main(String args[]) {
 
-    
+        int num = 123;
+        int arm = 0;
 
+        if (num > 0) {
 
+            arm = (num * num * num) + arm;
 
+            num = num / 10;
+        }
 
-
-   }
-    
+    }
 
 }
