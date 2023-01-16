@@ -95,6 +95,7 @@ public class exprement_01 {
 
 // 5. Java Program to Display Armstrong Number Between Two Intervals
 
+/*  
 package Java.Exprement_1;
 
 import java.util.*;
@@ -111,6 +112,39 @@ public class exprement_01 {
             arm = (num * num * num) + arm;
 
             num = num / 10;
+        }
+
+    }
+
+}
+*/
+
+// Java Program to Make a Simple Calculator Using switch...case
+
+package Java.Exprement_1;
+
+import java.util.*;
+
+public class exprement_01 {
+
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        System.out.println("Enter operator:");
+        char  ch= sc.next().charAt(0);
+
+        switch (ch) {
+            case '+':
+            System.out.println("Sum of two number is" + " "+ (num1 + num2));
+            case '-':
+            System.out.println("Sum of two number is" + " "+ (num1 - num2));
+            case '*':
+            System.out.println("Sum of two number is" + " "+ (num1 * num2));
+            case '/':
+            System.out.println("Sum of two number is" + " "+ (num1 / num2));
+
         }
 
     }
