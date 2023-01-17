@@ -245,6 +245,8 @@ public class exprement_01 {
 
 // 10.   Java Program to Add Two Matrix Using Multi-dimensional Arrays
 
+/*
+ 
 package Java.Exprement_1;
 
 import java.util.*;
@@ -277,6 +279,25 @@ public class exprement_01 {
             }
             System.out.println();
         }
+
+    }
+}
+
+ */
+
+// 17...Java Program to convert char type variables to integer.
+
+package Java.Exprement_1;
+
+import java.util.*;
+
+public class exprement_01 {
+
+    public static void main(String args[]) {
+
+        char ch = '3';
+        int num= ch-'0';
+        System.out.println(num);
 
     }
 }
