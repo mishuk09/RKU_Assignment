@@ -287,6 +287,9 @@ public class exprement_01 {
 
 // 17...Java Program to convert char type variables to integer.
 
+
+
+/*  
 package Java.Exprement_1;
 
 import java.util.*;
@@ -301,3 +304,7 @@ public class exprement_01 {
 
     }
 }
+
+
+
+*/
