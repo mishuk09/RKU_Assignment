@@ -95,68 +95,87 @@ public class exprement_01 {
 
 // 5. Java Program to Display Armstrong Number Between Two Intervals
 
+// import java.util.*;
+
+// public class exprement_01 {
+
+//     public static void main(String args[]) {
+
+//         int num = 153;
+//         int arm = 0;
+//         int temp = num;
+
+//         if (num > 0) {
+
+//             int lastDigit = num % 10;
+
+//             arm = (lastDigit * lastDigit * lastDigit) + arm;
+
+//             num = num / 10;
+//         }
+
+//         System.out.println(arm);
+//         if (temp == arm) {
+//             System.out.println("Armstrong");
+//         } else {
+//             System.out.println("Not armstrong");
+//         }
+
+//     }
+
+// }
+
+// public class exprement_01 {
+
+// public static void main(String args[]) {
+// int num = 153;
+// int rev = 0;
+// int temp = num;
+
+// while (num > 0) {
+// int lastDigit = num % 10;
+// rev = (lastDigit * lastDigit * lastDigit) + rev;
+// num = num / 10;
+// }
+
+// if (temp == rev) {
+// System.out.println("Armstrong");
+// } else {
+// System.out.println("Not armstrong");
+// }
+// }
+
+// }
+
+// Java Program to Make a Simple Calculator Using switch...case
+
 import java.util.*;
 
 public class exprement_01 {
 
     public static void main(String args[]) {
 
-        int num = 153;
-        int arm = 0;
-        int temp = num;
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        System.out.println("Enter operator:");
+        char ch = sc.next().charAt(0);
 
-        if (num > 0) {
-            
-            int lastDigit = num % 10;
+        switch (ch) {
+            case '+':
+                System.out.println("Sum of two number is" + " " + (num1 + num2));
+            case '-':
+                System.out.println("Sum of two number is" + " " + (num1 - num2));
+            case '*':
+                System.out.println("Sum of two number is" + " " + (num1 * num2));
+            case '/':
+                System.out.println("Sum of two number is" + " " + (num1 / num2));
 
-            arm = (lastDigit * lastDigit * lastDigit) + arm;
-
-            num = num / 10;
-        }
-
-        if (temp == arm) {
-            System.out.println("Armstrong");
-        } else {
-            System.out.println("Not armstrong");
         }
 
     }
 
 }
-
-// Java Program to Make a Simple Calculator Using switch...case
-
-/*
- * package Java.Exprement_1;
- * 
- * import java.util.*;
- * 
- * public class exprement_01 {
- * 
- * public static void main(String args[]) {
- * 
- * Scanner sc = new Scanner(System.in);
- * int num1 = sc.nextInt();
- * int num2 = sc.nextInt();
- * System.out.println("Enter operator:");
- * char ch = sc.next().charAt(0);
- * 
- * switch (ch) {
- * case '+':
- * System.out.println("Sum of two number is" + " " + (num1 + num2));
- * case '-':
- * System.out.println("Sum of two number is" + " " + (num1 - num2));
- * case '*':
- * System.out.println("Sum of two number is" + " " + (num1 * num2));
- * case '/':
- * System.out.println("Sum of two number is" + " " + (num1 / num2));
- * 
- * }
- * 
- * }
- * 
- * }
- */
 
 // Write a java Program to check the number is Prime or not.
 
