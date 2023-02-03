@@ -289,15 +289,15 @@ public class exprement_01 {
 
 // 17...Java Program to convert char type variables to integer.
 
-import java.util.*;
+// import java.util.*;
 
-public class exprement_01 {
+// public class exprement_01 {
 
-    public static void main(String args[]) {
+//     public static void main(String args[]) {
 
-        char ch = '3';
-        int num = ch - '0';
-        System.out.println(num);
+//         char ch = '3';
+//         int num = ch - '0';
+//         System.out.println(num);
 
-    }
-}
+//     }
+// }
