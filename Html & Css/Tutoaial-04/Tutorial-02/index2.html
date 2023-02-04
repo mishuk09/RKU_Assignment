@@ -7,12 +7,13 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style2.css'>
     <script src='main.js'></script>
-    <script>
-        function myFunction() {
-          let x = document.getElementById("fname");
-          x.value = x.value.toUpperCase();
-        }
-        </script>
+   
+            <script>
+                function myFunction() {
+                  document.getElementById("demo").innerHTML = "You pressed a key inside the input field";
+                }
+            </script>
+            
 </head>
 <body>
 
@@ -30,7 +31,8 @@
             </div>
 
             <div class="inputform">
-                <input class="form" type="text" placeholder="Username(Email)">
+                <p id="demo"></p>
+                <input class="form" type="text" onkeydown="myFunction()" placeholder="Username(Email)">
                 <input class="form" type="password" placeholder="Password"> <br>
                 <input class="form" type="password" placeholder="Re-Password">
                 <input class="form" type="number" placeholder="Age"><br>
@@ -45,7 +47,12 @@
 
 
 
-
+                <script>
+                    function myFunction() {
+                      let x = document.getElementById("fname");
+                      x.value = x.value.toUpperCase();
+                    }
+                    </script>
 
 
 
