@@ -26,7 +26,9 @@ else if ($average >= 60 && $average < 70)
 else
     $grade = "E";
 
+    
 // It will print the final output
+
 echo "The Total marks   = " . $total . "/500\n";
 echo "The Average marks = " . $average . "\n";
 echo "The Percentage    = " . $percentage . "%\n";
