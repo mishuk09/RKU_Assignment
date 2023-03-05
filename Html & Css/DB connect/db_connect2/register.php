@@ -143,13 +143,38 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
+         body {
+            font: 14px sans-serif;
+        }
+        
+        body {
+            font: 14px time;
+            background-color: rgb(203, 255, 238);
+        }
+        
+        .wrapper {
+            border: 1px solid rgb(255, 219, 219);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            background-color: white;
+            width: 360px;
+            padding: 20px;
+        }
+        
+        .wrapper a img {
+            width: 150px;
+            display: block;
+            margin-left: Auto;
+            margin-right: Auto;
+        }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <h2>Sign Up</h2>
+    <a href=""> <img src="logo2.png" alt=""></a>
+        <h4>Sign Up</h4>
         <p>Please fill this form to create an account.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">

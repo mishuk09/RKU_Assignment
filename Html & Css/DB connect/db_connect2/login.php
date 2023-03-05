@@ -96,13 +96,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
+        .wrapper {
+            border: 1px solid rgb(255, 219, 219);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            background-color: white;
+            width: 360px;
+            padding: 20px;
+        }
+        
+        .wrapper a img {
+            width: 150px;
+            display: block;
+            margin-left: Auto;
+            margin-right: Auto;
+        }
+
+        
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
+    <a href=""> <img src="logo2.png" alt=""></a>
+        <h4>Login</h4>
+         
 
         <?php 
         if(!empty($login_err)){
