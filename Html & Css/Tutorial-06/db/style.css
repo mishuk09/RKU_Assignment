@@ -1,0 +1,338 @@
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Sofia+Sans+Condensed:wght@300&display=swap');
+    @media only screen and(max) {}
+    
+    body {
+        font-family: sans-serif;
+        font-family: 'Aleo', serif;
+    }
+    
+    .body {
+        background-color: #f9f4f4;
+    }
+    /* Navbar Css */
+    
+    .navbar-main {
+        background-image: url(images/nav.png);
+    }
+    
+    .search-bar-back {
+        background-color: white;
+        height: 50px;
+        border-radius: 4px;
+    }
+    
+    .search-bar-back input {
+        margin-top: 6px;
+    }
+    
+    .search-bar2 {
+        margin-top: 8px;
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+    
+    .login-button button {
+        width: 100px;
+        margin-top: 0px;
+    }
+    
+    .login-button button {
+        border: 1px solid #4CAF50;
+        border-radius: 5px;
+    }
+    
+    .login-button button i {
+        font-weight: 600;
+        margin-left: 5px;
+    }
+    
+    .login-button button span {
+        margin-left: 5px;
+    }
+    
+    .nav-div button {
+        height: 35px;
+        width: 70px;
+        background-color: white;
+        border-radius: 5px;
+        border: none;
+        margin-top: 8px;
+        border: 1px solid rgb(203, 177, 177);
+    }
+    
+    .nav-div button i {
+        color: black;
+    }
+    
+    .login-button button {
+        border: 1px solid #4CAF50;
+        border-radius: 5px;
+        padding: 2px;
+        margin-top: 5px;
+        height: 35px;
+        width: 100px;
+        background-color: white;
+    }
+    
+    .login-button button:hover {
+        color: white;
+        background-color: #4CAF50;
+        transition: 0.5s;
+    }
+    
+    .login-button button i {
+        font-weight: 600;
+        margin-left: 5px;
+    }
+    
+    .login-button button span {
+        margin-left: 5px;
+    }
+    
+    .log-in-back {
+        background-color: white;
+        height: 50px;
+        border-radius: 4px;
+    }
+    
+    .manue-bar {
+        height: 45px;
+        background-color: #4CAF50;
+    }
+    
+    #rku {
+        background-color: white;
+    }
+    
+    #rku a {
+        color: navy;
+    }
+    /*-------------------------------- Navbar Css --------------------------------*/
+    /*-------------------------------- Manue start --------------------------------*/
+    
+    .manue-bar-design {
+        display: flex;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 700;
+    }
+    
+    .manue-bar-design a i {
+        color: white;
+    }
+    
+    .manue-home a {
+        margin-top: 10px;
+    }
+    
+    .nabar-link {
+        display: flex;
+        background-color: #B4161B;
+        height: 45px;
+    }
+    
+    .nabar-link div {
+        display: flex;
+        width: 100px;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .nabar-link div:hover {
+        background-color: #4CAF50;
+        transition: 0.5s;
+        height: 45px;
+    }
+    
+    .nabar-link div a {
+        text-decoration: none;
+        font-weight: 700;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        margin-top: 10px;
+        margin-left: 5px;
+        padding: 0px;
+    }
+    
+    #dbms {
+        width: 100px;
+    }
+    
+    .nabar-link div a i {
+        margin: 3px;
+    }
+    
+    .arrow-button {
+        margin-bottom: 80px;
+        font-size: 25px;
+        font-weight: 700;
+        margin-right: 26px;
+    }
+    
+    .chat-icon-div {
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+    
+    .chat-icon-div-img {
+        height: 50px;
+        border-radius: 50%;
+        margin-top: 100px;
+        margin-right: 10px;
+    }
+    /*-------------------------------- Manue end --------------------------------*/
+    /*-------------------------------- Latest tutorial start--------------------------------*/
+    
+    .latest-tutorial-headline i {
+        font-size: 30px;
+        color: #4CAF50;
+    }
+    
+    .latest-tutorial-headline {
+        font-size: 30px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .latest-tutorial-headline span {
+        font-size: 30px;
+        font-family: 'Times New Roman', Times, serif;
+        color: #e83a59;
+        font-weight: 700;
+    }
+    
+    .latest-tutorial-div div {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .latest-tutorial-div div img {
+        margin-top: 30px;
+    }
+    
+    .shadow p {
+        color: #4CAF50;
+        margin-top: 18px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 700;
+    }
+    
+    .text-decoration-p a {
+        text-decoration: none !important;
+    }
+    /*-------------------------------- Latest tutorial End----------------------------/
+
+
+
+
+
+
+
+
+            /*-------------------------------- Trending tutoria start----------------------------*/
+    
+    .carfooter-div {
+        display: flex;
+    }
+    
+    .carfooter-div button {
+        border: none;
+        background-color: #4CAF50;
+        padding: 5px;
+        color: white;
+        font-weight: 700;
+        border-radius: 4px;
+        margin-top: 2px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    /*-------------------------------- Trending  tutorial End--------------------------------*/
+    
+    footer {
+        background-color: #eee9e9;
+        height: 250px;
+    }
+    
+    .footer-main-div {
+        display: flex;
+    }
+    
+    .footer-main-div0 p img {
+        margin-left: px;
+        margin-top: 10px;
+    }
+    
+    .footer-main-div0 p {
+        margin-left: 40px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .footer-main-div1 img {
+        margin-left: 40px;
+        margin-top: 0px;
+        padding: 0px;
+    }
+    
+    .footer-main-div1 {
+        margin-top: 0px;
+    }
+    
+    .location-email {
+        line-height: 0in;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+    
+    .footer-about {
+        margin-left: 30px;
+        margin-top: 20px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .footer-about a {
+        text-decoration: none;
+        color: black;
+        padding-top: 15px;
+    }
+    
+    .footer-learn {
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .footer-learn a {
+        text-decoration: none;
+        color: black;
+        padding-top: 15px;
+    }
+    
+    .footer-contact {
+        font-family: 'Times New Roman', Times, serif;
+    }
+    /* icon */
+    
+    .footer-div a i {
+        font-size: 25px;
+        color: black;
+        margin-left: 8px;
+    }
+    
+    .footer-div svg {
+        color: white;
+        background-color: white;
+        border-radius: 50%;
+        border: none;
+    }
+    
+    .footer-div {
+        margin-top: 0px;
+        font-size: 10px;
+        color: white;
+        padding: 5px;
+    }
+    
+    .footer-div3 {
+        margin-top: 5px;
+        color: black;
+    }
