@@ -18,24 +18,51 @@
 
     <main>
         <section>
-            <article>
-                <h3>My blog-1</h3>
+            <article class="blog">
+                <h3 id="first-id">My blog-1</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi totam dolore quia. Repudiandae deleniti accusantium distinctio enim quidem corporis, libero sed autem praesentium voluptatibus magni, quam, dolor tempore quod inventore.</p>
             </article>
-            <article>
-                <h3>My blog-2</h3>
+            <article class="blog">
+                <h3 id="second-id">My blog-2</h3>
                 <p>Nostrum enim adipisci molestiae. Dicta consequatur sunt illum, iusto maxime commodi suscipit ipsa assumenda nulla, ullam voluptatem. Accusamus ut aliquam voluptates dignissimos hic non quia maxime nobis iste, beatae perferendis.</p>
             </article>
-            <article>
-                <h3>My blog-3</h3>
+            <article class="blog">
+                <h3 id="third-id">My blog-3</h3>
                 <p>Accusamus, aliquid labore impedit iure in ratione reprehenderit veritatis unde dolorem ipsam, quos ad officiis est! Tenetur iure accusamus expedita fugiat consectetur fugit voluptates libero quae! Minima corporis aut commodi!</p>
             </article>
-            <article>
-                <h3>My blog-4</h3>
+            <article class="blog">
+                <h3 id="fourth-id">My blog-4</h3>
                 <p>Accusamus, aliquid labore impedit iure in ratione reprehenderit veritatis unde dolorem ipsam, quos ad officiis est! Tenetur iure accusamus expedita fugiat consectetur fugit voluptates libero quae! Minima corporis aut commodi!</p>
             </article>
         </section>
     </main>
+
+    <script>
+        // const student = {
+        //     name: 'hasan',
+        //     age: 20
+        // }
+        // console.log(document.body);
+        // const blogTitles = document.getElementsByTagName('h3');
+
+        // for (const h3 of blogTitles) {
+        //     console.log(h3.innerText);
+        // }
+
+
+        // const blogDetils = document.getElementsByTagName('p');
+        // for (const p of blogDetils) {
+        //     console.log(p.innerHTML)
+        // }
+        const secondTitle = document.getElementById('first-id');
+        secondTitle.style.textAlign = 'center';
+
+        const thirdTitle = document.getElementById('third-id');
+
+        thirdTitle.style.backgroundColor = 'red'
+            // const classs = document.getElementsByClassName('blog');
+            // classs.style.bordar = '1px solid black';
+    </script>
 
 </body>
 
