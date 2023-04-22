@@ -54,14 +54,23 @@
         // for (const p of blogDetils) {
         //     console.log(p.innerHTML)
         // }
+
+        const idDetils = document.getElementById('second-id');
+        idDetils.style.textAlign = 'center'
         const secondTitle = document.getElementById('first-id');
         secondTitle.style.textAlign = 'center';
+
 
         const thirdTitle = document.getElementById('third-id');
 
         thirdTitle.style.backgroundColor = 'red'
-            // const classs = document.getElementsByClassName('blog');
-            // classs.style.bordar = '1px solid black';
+
+        const classs = document.getElementsByClassName('blog');
+        for (const blog of classs) {
+            blog.style.border = '2px solid orange';
+            blog.style.margin = '10px';
+            blog.style.padding = '5px';
+        }
     </script>
 
 </body>
