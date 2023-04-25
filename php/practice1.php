@@ -2,9 +2,16 @@
 
 <?php
 
-$name="Helllo My name is Mahadi Hasan Mishuk";
-$roll=48;
-echo $name . "<br>";
-echo $roll;
+$num1=10;
+$num2=20;
+
+if($num1>$num2){
+    echo"$num1 is Max";
+
+}
+else{
+    echo"$num2 is max";
+
+}
 
 ?>
