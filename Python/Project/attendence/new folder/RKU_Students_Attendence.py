@@ -108,125 +108,165 @@ def login_as_admin():
                 master, text="Register", command=self.register_student)
             self.register_button.pack(pady=10)
 
-
-            # -------Start-----------------------------------#
+            # -------------------Start-----------------------------------------------------------------#
 
             def take_attendance_callback_function():
                 import tkinter as tk
                 import mysql.connector
-                # Create a connection to the database
+                from tkinter import messagebox
+
+                # Establishing connection with the database
                 mydb = mysql.connector.connect(
                     host="localhost",
                     user="root",
                     password="",
                     database="rku_attendence_admin"
                 )
-                # Create a cursor object to execute SQL queries
+
+                # Creating a cursor object
                 mycursor = mydb.cursor()
-                # Create a table if it does not already exist
-                mycursor.execute(
-                    "CREATE TABLE IF NOT EXISTS attendance (id INT AUTO_INCREMENT PRIMARY KEY, faculty VARCHAR(255), division VARCHAR(255), date VARCHAR(255), student_name VARCHAR(255), attendance_status VARCHAR(255))")
+                student_data = None
+                division_name_table = None
+                attendance_status_boolean = []
 
-                class AttendanceGUI:
-                    def __init__(self):
-                        self.root = tk.Tk()
-                        self.root.title("RKU Attendance System")
-                        # Create the welcome label
-                        welcome_label = tk.Label(
-                            self.root, text="Welcome to RKU Server", font=("Arial", 14))
-                        welcome_label.grid(
-                            row=0, column=0, columnspan=3, pady=10)
+                # Defining the function to display the student data with tick marks for attendance
 
-                        # Create input fields for faculty, division, and date
-                        faculty_label = tk.Label(self.root, text="Faculty:")
-                        faculty_label.grid(
-                            row=1, column=0, padx=10, pady=10, sticky="w")
-                        self.faculty_entry = tk.Entry(self.root)
-                        self.faculty_entry.grid(
-                            row=1, column=1, padx=10, pady=10)
+                def display_attendance(table_name):
+                    global attendance_status_boolean, student_data
+                    attendance_status_boolean = []
+                    # Fetching the student data from the table
+                    mycursor.execute("SELECT * FROM " + table_name)
+                    student_data = mycursor.fetchall()
 
-                        division_label = tk.Label(self.root, text="Division:")
-                        division_label.grid(
-                            row=2, column=0, padx=10, pady=10, sticky="w")
-                        self.division_entry = tk.Entry(self.root)
-                        self.division_entry.grid(
-                            row=2, column=1, padx=10, pady=10)
+                    # Defining the function to update attendance status
+                    def update_attendance_status(i, value):
+                        attendance_status_boolean[i] = value
 
-                        date_label = tk.Label(self.root, text="Date:")
-                        date_label.grid(row=3, column=0,
-                                        padx=10, pady=10, sticky="w")
-                        self.date_entry = tk.Entry(self.root)
-                        self.date_entry.grid(row=3, column=1, padx=10, pady=10)
+                    # Clearing the previous data from the frame
+                    for widget in frame.winfo_children():
+                        widget.destroy()
 
-                        # Create the headers for roll, name, and attendance
-                        roll_label = tk.Label(self.root, text="Roll")
-                        roll_label.grid(row=4, column=0, padx=10, pady=10)
+                    # Creating the table headers
+                    headers = ["Roll No.", "Name", "Attendance"]
+                    for j, header in enumerate(headers):
+                        label = tk.Label(frame, text=header)
+                        label.grid(row=0, column=j)
 
-                        name_label = tk.Label(self.root, text="Name")
-                        name_label.grid(row=4, column=1, padx=10, pady=10)
+                    # Creating a table to display the student data with tick marks for attendance
+                    for i in range(len(student_data)):
+                        # Displaying the roll number
+                        label = tk.Label(frame, text=str(student_data[i][0]))
+                        label.grid(row=i+1, column=0)
 
-                        attendance_label = tk.Label(
-                            self.root, text="Attendance")
-                        attendance_label.grid(
-                            row=4, column=2, padx=10, pady=10)
+                        # Displaying the name
+                        label = tk.Label(frame, text=str(student_data[i][1]))
+                        label.grid(row=i+1, column=1)
 
-                        # Create the student labels, roll numbers, and tick mark buttons
-                        self.student_labels = []
-                        self.roll_labels = []
-                        self.tick_buttons = []
-                        for i in range(10):
-                            roll = i+1
-                            roll_label = tk.Label(self.root, text=roll)
-                            roll_label.grid(row=i+5, column=0,
-                                            padx=10, pady=10)
-                            self.roll_labels.append(roll_label)
+                        # Creating a checkbox to mark attendance
+                        attendance_var = tk.BooleanVar()
+                        attendance_var.set(False)
+                        attendance_checkbox = tk.Checkbutton(
+                            frame, variable=attendance_var, command=lambda i=i, v=attendance_var.get(): update_attendance_status(i, v))
+                        attendance_checkbox.grid(row=i+1, column=2)
+                        attendance_status_boolean.append(
+                            False)  # set initial value to False
 
-                            name_label = tk.Label(
-                                self.root, text=f"Student {i+1}")
-                            name_label.grid(row=i+5, column=1,
-                                            padx=10, pady=10)
-                            self.student_labels.append(name_label)
+                # Defining the function to handle the submission of attendance data
 
-                            tick_var = tk.BooleanVar()
-                            button = tk.Checkbutton(
-                                self.root, variable=tick_var)
-                            button.grid(row=i+5, column=2)
-                            self.tick_buttons.append(tick_var)
+                def submit_attendance():
+                    # Getting the faculty, division, and date
+                    global attendance_status_boolean, student_data, division_name_table
+                    faculty = faculty_entry.get()
+                    division = dropdown_var.get()
+                    date = date_entry.get()
 
-                        # Create the submit button
-                        submit_button = tk.Button(
-                            self.root, text="Submit", command=self.submit_attendance)
-                        submit_button.grid(
-                            row=16, column=0, columnspan=3, padx=10, pady=10)
+                    # Creating a list of tuples containing student data and attendance status
+                    final_status = list(
+                        zip(student_data, attendance_status_boolean))
 
-                    def submit_attendance(self):
-                        # Get the attendance data from the input fields and tick marks
-                        faculty = self.faculty_entry.get()
-                        division = self.division_entry.get()
-                        date = self.date_entry.get()
-                        attendance_data = []
-                        for i, tick_var in enumerate(self.tick_buttons):
-                            roll = i+1
-                            name = self.student_labels[i].cget("text")
-                            attendance_status = "Present" if tick_var.get() else "Absent"
-                            attendance_data.append(
-                                (faculty, division, date, name, attendance_status))
+                    # Inserting attendance data into the database
+                    for query in final_status:
+                        try:
+                            id = query[0][0]
+                            name = query[0][1]
+                            if False in query:
+                                query = f"INSERT INTO attendance VALUES ('{faculty}', '{division}', '{date}', '{name}','{id}', 'Absent');"
+                                mycursor.execute(query)
+                                mydb.commit()
+                            elif True in query:
+                                query = f"INSERT INTO attendance VALUES ('{faculty}', '{division}', '{date}', '{name}','{id}', 'Present');"
+                                mycursor.execute(query)
+                                mydb.commit()
+                        except Exception:
+                            messagebox.showerror("Error", "Error Occured")
+                            return
+                    messagebox.showinfo(
+                        "Success", "Attendance Updated Successfully")
 
-                        # Insert the attendance data into the database
-                        sql = "INSERT INTO attendance (faculty, division, date, student_name, attendance_status) VALUES (%s, %s, %s, %s, %s)"
-                        mycursor.executemany(sql, attendance_data)
-                        mydb.commit()
+                # Defining the function to handle the selection from the dropdown menu
 
-                        # Show a message in the GUI interface
-                        message_label = tk.Label(
-                            self.root, text="Attendance data inserted successfully", fg="green")
-                        message_label.grid(
-                            row=17, column=0, columnspan=3, pady=10)
-            # -------------------------------------end------#
-                if __name__ == "__main__":
-                    app = AttendanceGUI()
-                    app.root.mainloop()
-                    
+                def handle_dropdown(selection):
+                    global division_name_table
+                    if selection == "IT":
+                        display_attendance("it_students")
+                        division_name_table = "it_students"
+                    elif selection == "CE":
+                        display_attendance("ce_students")
+                        division_name_table = "ce_students"
+
+                    # Creating the Tkinter window
+                root = tk.Tk()
+                root.title("RKU Attendance")
+                root.geometry("500x400")
+
+                # Adding the RKU server label
+                rku_server_label = tk.Label(
+                    root, text="Welcome to RKU Server", font=("Arial", 20))
+                rku_server_label.pack()
+
+                faculty_frame = tk.Frame(root)
+                faculty_frame.pack()
+                faculty_label = tk.Label(faculty_frame, text="Faculty:")
+                faculty_label.pack(side="left", anchor="w")
+                faculty_entry = tk.Entry(faculty_frame)
+                faculty_entry.pack(side="left")
+
+                # Creating the Date label and entry
+                date_frame = tk.Frame(root)
+                date_frame.pack()
+                date_label = tk.Label(date_frame, text="Date:")
+                date_label.pack(side="left", anchor="w")
+                date_entry = tk.Entry(date_frame)
+                date_entry.pack(side="left")
+
+                # Creating a frame for the label and dropdown menu
+                dropdown_frame = tk.Frame(root)
+                dropdown_frame.pack()
+
+                # Creating the label for the dropdown menu
+                division_label = tk.Label(dropdown_frame, text="Division:")
+                division_label.pack(side="left", anchor="w")
+
+                # Creating the dropdown menu for IT and CE
+                options = ["IT", "CE"]
+                dropdown_var = tk.StringVar(root)
+                dropdown_var.set(options[0])
+                dropdown_menu = tk.OptionMenu(
+                    dropdown_frame, dropdown_var, *options, command=handle_dropdown)
+                dropdown_menu.pack(side="left")
+
+                # Creating a frame to display the data
+                frame = tk.Frame(root)
+                frame.pack()
+
+                # Creating the submit button
+                submit_button = tk.Button(
+                    root, text="Submit Attendance", command=submit_attendance)
+                submit_button.pack()
+
+                # Starting the Tkinter main loop
+                root.mainloop()
+
             take_attendance_button = tk.Button(
                 master, text="Take Attendance", command=take_attendance_callback_function)
 

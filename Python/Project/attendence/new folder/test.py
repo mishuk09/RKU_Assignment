@@ -75,11 +75,11 @@ def submit_attendance():
             id = query[0][1]
             name = query[0]
             if False in query:
-                query = f"INSERT INTO attendance VALUES ('{faculty}', '{division}', '{date}', '{name[0]}','{id}', 'Absent');"
+                query = f"INSERT INTO attendence VALUES ('{faculty}', '{division}', '{date}', '{name[0]}','{id}', 'Absent');"
                 mycursor.execute(query)
                 mydb.commit()
             elif True in query:
-                query = f"INSERT INTO attendance VALUES ('{faculty}', '{division}', '{date}', '{name[0]}','{id}', 'Present');"
+                query = f"INSERT INTO attendence VALUES ('{faculty}', '{division}', '{date}', '{name[0]}','{id}', 'Present');"
                 mycursor.execute(query)
                 mydb.commit()
         except Exception:
